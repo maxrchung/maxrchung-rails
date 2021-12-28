@@ -1,0 +1,12 @@
+<h1><%= post.title %></h1>
+<p class="timestamp">Last edited: <%= post.updated_at.strftime("%-d %B %Y, %l:%M%p") %></p>
+<%= post.content.html_safe %>
+<% if logged_in? %>
+    <%= button_to "Edit post", edit_post_path(:id => post.id), :method => :get %>
+    <%= button_to "Delete post", post_path(:id => post.id), :method => :delete, data: { confirm: 'Are you sure?' } %>
+    
+    <% if post.attachments.length > 0 %>	
+	Attachments<br>
+	<%= render post.attachments %>
+    <% end %>
+<% end %>

@@ -1,0 +1,7 @@
+<% @title = "About" %>
+
+<% if logged_in? %>
+    <%= button_to 'New post', new_post_path, :method => :get %>
+<% end %>
+
+<%= render @posts %>

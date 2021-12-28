@@ -1,0 +1,17 @@
+<% @title = @blog.title %>
+
+<h1><%= @blog.title %></h1>
+
+<p class="timestamp"><%= @blog.created_at.strftime("%-d %B %Y, %l:%M%p") %></p>
+
+<%= @blog.content.html_safe %>
+
+<% if logged_in? %>
+    <%= button_to "Edit blog", edit_blog_path(:id => @blog.id), :method => :get %>
+    <%= button_to "Delete post", blog_path(:id => @blog.id), :method => :delete, data: { confirm: 'Are you sure?' } %>
+    
+    <% if @blog.attachments.length > 0 %>
+	Attachments<br>
+	<%= render @blog.attachments %>
+    <% end %>
+<% end %>

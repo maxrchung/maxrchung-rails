@@ -1,0 +1,452 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+/* Used to reset CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    font-family: 'Open Sans', 'Source Sans Pro', sans-serif;
+    overflow-y: scroll;
+    background-color: white;
+    background-image: url("background.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 1080px 1080px;
+}
+
+h1 {
+    font-size: 30px;
+    padding: 0px 20px 10px 20px;
+    font-weight: bold;
+}
+
+p { 
+    padding: 0 20px 30px 20px;
+    font-size: 19px;
+    line-height: 30px;
+}
+
+p.timestamp {
+    padding-bottom: 10px;
+}
+
+p.caption {
+    margin-top: -30px;
+    text-align: center;
+}
+
+ul {
+    padding: 0 20px 30px 60px;
+    margin-top: -20px;
+    font-size: 19px;
+    line-height: 30px;
+    list-style-type: disc;
+}
+
+::selection {
+    background: #ff7f7f;
+}
+
+a {
+    color: #ff7f7f;
+}
+
+a::selection {
+    background: #333333;
+}
+
+a:hover {
+    color: black;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: #ff7f7f;
+    text-align: center;
+    position: fixed;
+    border-bottom: 2px solid white;
+}
+
+@media (min-width: 700px) {
+    #buttons { 
+	width: 700px;
+	margin: 0 auto;
+    }
+}
+
+#buttons a {
+    width: 25%;
+    height: 50px;
+    text-decoration: none;
+    float: left;
+    font-size: 19px;
+    line-height: 50px;
+    outline: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+@media (min-width: 700px) {
+    #buttons a { 
+	width: 174px;
+    }
+
+    #buttons a:first-child {
+	border-left: 1px solid white;
+    }
+
+    #buttons a:last-child {
+	border-right: 1px solid white;
+    }
+}
+
+#buttons a:visited {
+    color: white;
+}
+
+#buttons a:hover {
+    color: black;
+}
+
+#mid {
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+@media (min-width: 700px) {
+    #mid { 
+	width: 700px;
+    }
+}
+
+img, video, audio {
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto 30px auto;
+    max-width: 80%;
+}
+
+@media (min-width: 600px) {
+    .ignore-border {
+	position: relative;
+	margin-left: 0;
+	margin-right: 0;
+	max-width: none;
+	left: 50%;
+	transform: translate(-50%);
+    }
+}
+
+.player-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 0;
+    padding-bottom: 45%;
+    margin-bottom: 30px;
+}
+
+.challonge-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+}
+
+iframe, embed, .player-wrapper a, .player-wrapper div {
+    position: absolute;
+    width: 100% !important; /* god dammit niconico */
+    height: 100% !important;
+}
+
+@media (min-width: 700px) {
+    textarea {
+	width: 700px;
+	height: 500px;
+    }
+}
+
+#header {
+    /* On top of project's absolute css */
+    z-index: 1;
+}
+
+#header .contact, .icon {
+    display: none;
+}
+
+@media (min-width: 1420px) {
+    #header .contact, .icon {
+	display: block;
+	position: absolute;
+	top: 9px;
+    }
+
+    #header .contact {
+	right: 0;
+    }
+
+    #header .icon {
+	left: 0;
+    }
+}
+
+.icon, .contact {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icon {
+    height: 32px;
+}
+
+.contact {
+    width: 100%;
+    float: left;
+}
+
+@media (min-width: 360px) {
+    .contact {
+	float: none;
+	width: 360px;
+	height: 62px;
+    }
+}
+
+.icon .iconw, .gmailw, .gmail, .linkedinw, .linkedin, 
+.githubw, .github, .twitterw, .twitter, .osuw, .osu {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    float: left;
+    margin: 0 20px 20px 20px;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+}
+
+.icon .iconw {
+    background-image: url('/file/iconw.png')
+}
+
+.icon .iconw:hover {
+    background-image: url('/file/iconb.png')
+}
+
+.contact .gmailw {
+    background-image: url('/file/gmail_logow.png')
+}
+
+.contact .gmail {
+    background-image: url('/file/gmail_logo.png')
+}
+
+.contact .gmailw:hover {
+    background-image: url('/file/gmail_logob.png')
+}
+
+.contact .gmail:hover {
+    background-image: url('/file/gmail_logob.png')
+}
+
+.contact .linkedinw {
+    background-image: url('/file/linkedin_logow.png')
+}
+
+.contact .linkedin {
+    background-image: url('/file/linkedin_logo.png')
+}
+
+.contact .linkedinw:hover {
+    background-image: url('/file/linkedin_logob.png')
+}
+
+.contact .linkedin:hover {
+    background-image: url('/file/linkedin_logob.png')
+}
+
+.contact .githubw {
+    background-image: url('/file/github_logow.png')
+}
+
+.contact .github {
+    background-image: url('/file/github_logo.png')
+}
+
+.contact .githubw:hover {
+    background-image: url('/file/github_logob.png')
+}
+
+.contact .github:hover {
+    background-image: url('/file/github_logob.png')
+}
+
+.contact .twitterw {
+    background-image: url('/file/twitter_logow.png')
+}
+
+.contact .twitter {
+    background-image: url('/file/twitter_logo.png')
+}
+
+.contact .twitterw:hover {
+    background-image: url('/file/twitter_logob.png')
+}
+
+.contact .twitter:hover {
+    background-image: url('/file/twitter_logob.png')
+}
+
+.contact .osuw {
+    background-image: url('/file/osu_logow.png')
+}
+
+.contact .osu {
+    background-image: url('/file/osu_logo.png')
+}
+
+.contact .osuw:hover {
+    background-image: url('/file/osu_logob.png')
+}
+
+.contact .osu:hover {
+    background-image: url('/file/osu_logob.png')
+}
+
+.project-overview {
+    text-decoration: none;
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.project-overview img {
+    width: 25%;
+    max-width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 19%;
+    transform: translate(-50%,-50%);
+}
+
+.project-overview .project-overview-info {
+    width: 62%;
+    position: relative;
+    left: 38%;
+    padding: 0;
+}
+
+.project-overview h1 {
+    padding: 0 20px 5px 0;
+}
+
+.project-overview h1::selection {
+    background: #333333;
+}
+
+.project-overview p {
+    padding: 0 20px 5px 0;
+    padding-bottom: 5px;
+    color: black;
+}
+
+.blog-link {
+    text-decoration: none;
+}
+
+.blog-link h1::selection {
+    background-color: #333333;
+}
+
+.pagination {
+    font-size: 19px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff7f7f;
+}
+
+.pagination a:hover {
+    color: black;
+}
+
+.pagination a, .pagination .current, .pagination .previous_page,.pagination .next_page {
+    display: none;
+    margin-right: 2px;
+    padding: 10px 15px 10px 15px;
+}
+
+.pagination .previous_page, .pagination .next_page {
+    display: inline-block;
+}
+
+@media (min-width: 700px) {
+    .pagination a, .pagination .current {
+	display: inline-block;
+    }
+}

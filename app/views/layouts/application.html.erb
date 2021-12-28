@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title><%= @title%> - Max R. Chung</title>
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body class="has-navbar-fixed-top">
+		<% flash.each do |message_type, message| %>
+			<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+
+		<nav class="navbar is-primary is-fixed-top">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="/"><img src="/file/iconw.png"></a>
+
+				<a class="navbar-item is-hidden-desktop" href="mailto:maxrchung@gmail.com"><img src="/file/gmail_logow.png"></a>
+				<a class="navbar-item is-hidden-desktop" href="https://www.linkedin.com/in/maxrchung"><img src="/file/linkedin_logow.png"></a>
+				<a class="navbar-item is-hidden-desktop" href="https://github.com/maxrchung"><img src="/file/github_logow.png"></a>
+				<a class="navbar-item is-hidden-desktop" href="https://twitter.com/maxrchung"><img src="/file/twitter_logow.png"></a>
+				<a class="navbar-item is-hidden-desktop" href="https://osu.ppy.sh/u/1472763"><img src="/file/osu_logow.png"></a>
+
+				<a class="navbar-burger burger"><span></span><span></span><span></span></a>
+			</div>
+
+			<div class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="/projects">Projects</a>
+					<a class="navbar-item" href="/blog">Blog</a>
+					<a class="navbar-item" href="/about">About</a>
+				</div>
+
+				<div class="navbar-end">
+					<a class="navbar-item is-hidden-mobile" href="mailto:maxrchung@gmail.com"><img src="/file/gmail_logow.png"></a>
+					<a class="navbar-item is-hidden-mobile" href="https://www.linkedin.com/in/maxrchung"><img src="/file/linkedin_logow.png"></a>
+					<a class="navbar-item is-hidden-mobile" href="https://github.com/maxrchung"><img src="/file/github_logow.png"></a>
+					<a class="navbar-item is-hidden-mobile" href="https://twitter.com/maxrchung"><img src="/file/twitter_logow.png"></a>
+					<a class="navbar-item is-hidden-mobile" href="https://osu.ppy.sh/u/1472763"><img src="/file/osu_logow.png"></a>
+				</div>
+			</div>
+		</nav>
+
+		<div id="mid">
+			<%= yield %>
+		</div>
+
+		<div id="footer"></div>
+	</body>
+</html>

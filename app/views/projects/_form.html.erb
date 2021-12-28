@@ -1,0 +1,27 @@
+<%= form_for @project, html: { :multipart => true } do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :extension %><br>
+    <%= f.text_field :extension %><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_field :description %><br>
+
+    <%= f.label :startdate %><br>
+    <%= f.date_select :startdate, :order => [:month, :year] %><br>
+
+    <%= f.label :enddate %><br>
+    <%= f.date_select :enddate, :include_blank => true, :order => [:month, :year] %><br>
+
+    <%= f.label :content %><br>
+    <%= f.text_area :content %><br>
+
+    <%= f.label :thumbnail %><br>
+    <%= f.file_field :thumbnail %><br>
+    
+    <%= f.label :files %><br>
+    <%= f.file_field :file, :multiple => true, name: "attachments[file][]" %>
+    
+    <%= f.submit %>
+<% end %>

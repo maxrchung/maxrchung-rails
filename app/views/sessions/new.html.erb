@@ -1,0 +1,17 @@
+<% if logged_in? %>
+    <% provide(:title, "Logout") %>
+    <h1>Logout</h1>
+    <%= button_to "Logout", login_path, :method => :delete %>
+<% else %>
+    <% provide(:title, "Login") %>
+    <h1>Login</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Login" %>
+    <% end %>
+<% end %>

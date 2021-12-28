@@ -1,0 +1,26 @@
+<% @title = "Blog" %>
+
+<% if logged_in? %>
+    <%= button_to 'New blog', new_blog_path, :method => :get %>
+<% end %>
+
+<% @blogs.each do |b| %>
+    <%= link_to b, { :class => "blog-link" } do %>
+        <h1><%= b.title %></h1>
+    <% end %>
+
+    <p class="timestamp"><%= b.created_at.strftime("%-d %B %Y, %l:%M%p") %></p>
+    <%= b.content.html_safe %>
+
+    <% if logged_in? %>
+	    <%= button_to "Edit blog", edit_blog_path(:id => b.id), :method => :get %>
+	    <%= button_to "Delete post", blog_path(:id => b.id), :method => :delete, data: { confirm: 'Are you sure?' } %>
+
+        <% if b.attachments.length > 0 %>
+            Attachments<br>
+            <%= render b.attachments %>
+        <% end %>
+    <% end %>
+<% end %>
+
+<%= will_paginate @blogs, previous_label: "← Prev" %>

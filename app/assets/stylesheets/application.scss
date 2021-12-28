@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$mpink: #ff7f7f;
+$primary: $mpink;
+$link: $primary;
+$body-font-size: 20px;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+$family-sans-serif: 'Source Sans Pro', sans-serif;
+
+@import 'bulma';
+
+html {
+    overflow-y: scroll;
+    background-color: white;
+    background-image: url('background.png');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 1080px 1080px;
+}
+
+#mid {
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+
+    h1 {
+        font-size: 30px;
+        padding: 0px 20px 10px 20px;
+        font-weight: bold;
+    }
+
+    p {
+        padding: 0 20px 30px 20px;
+        line-height: 30px;
+
+        &.timestamp {
+            padding-bottom: 10px;
+        }
+
+        &.caption {
+            margin-top: -30px;
+            text-align: center;
+        }
+    }
+
+    ul {
+        padding: 0 20px 30px 60px;
+        margin-top: -20px;
+        line-height: 30px;
+        list-style-type: disc;
+    }
+
+    img, video, audio {
+        display: block;
+        border-radius: 10px;
+        margin: 0 auto 30px auto;
+        max-width: 80%;
+    }
+
+    .player-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+        height: 0;
+        padding-bottom: 45%;
+        margin-bottom: 30px;
+    }
+
+    .challonge-wrapper {
+        position: relative;
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
+    }
+
+    iframe, embed, .player-wrapper a, .player-wrapper div {
+        position: absolute;
+        width: 100% !important; /* god dammit niconico */
+        height: 100% !important;
+    }
+
+    .project-overview {
+        text-decoration: none;
+        width: 100%;
+        float: left;
+        position: relative;
+        margin-bottom: 30px;
+
+        img {
+            width: 25%;
+            max-width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 19%;
+            transform: translate(-50%,-50%);
+        }
+
+        .project-overview-info {
+            width: 62%;
+            position: relative;
+            left: 38%;
+            padding: 0;
+        }
+
+        h1 {
+            padding: 0 20px 5px 0;
+        }
+
+        p {
+            padding: 0 20px 5px 0;
+            padding-bottom: 5px;
+            color: black;
+        }
+    }
+
+    .pagination {
+        font-size: $body-font-size;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #ff7f7f;
+        }
+
+        a:hover {
+            color: $link-hover;
+        }
+
+        a, .current, .previous_page, .next_page {
+            display: none;
+            margin-right: 2px;
+            padding: 10px 15px 10px 15px;
+        }
+
+        .previous_page, .next_page {
+            display: inline-block;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    #mid {
+        width: 700px;
+
+        .ignore-border {
+            position: relative;
+            margin-left: 0;
+            margin-right: 0;
+            max-width: none;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        textarea {
+            width: 700px;
+            height: 500px;
+        }
+
+        .pagination a, .pagination .current {
+            display: inline-block;
+        }
+    }
+}

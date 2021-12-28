@@ -1,0 +1,7 @@
+<% if logged_in? %>
+    <%= render 'form' %>
+    <% if @project.attachments.length > 0 %>    
+	Attachments<br>
+	<%= render @project.attachments %>
+    <% end %>
+<% end %>

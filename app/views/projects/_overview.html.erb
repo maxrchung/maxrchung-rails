@@ -1,0 +1,24 @@
+<%= link_to project_path(project.extension), { :class => "project-overview" } do %>
+    <%= image_tag project.thumbnail_url if project.thumbnail? %>
+    <div class="project-overview-info">
+	<h1><%= project.title %></h1>
+	<% if project.startdate == project.enddate %>
+	    <p>(<%= project.startdate.strftime("%b. %Y") %>)</p>
+	<% elsif project.enddate %>
+	    <p>(<%= project.startdate.strftime("%b. %Y") %> - <%= project.enddate.strftime("%b. %Y") %>)</p>
+	<% else %>
+	    <p>(<%= project.startdate.strftime("%b. %Y") %> - Present)</p>
+	<% end %>
+	<p><%= project.description.html_safe if project.description? %></p>
+    </div>
+<% end %>
+
+<% if logged_in? %>
+    <%= button_to "Edit project", edit_project_path(:id => project.id), :method => :get %>
+    <%= button_to "Delete project", project_path(:id => project.id), :method => :delete, data: { confirm: 'Are you sure?' } %>
+    
+    <% if project.attachments.length > 0 %>
+	Attachments<br>
+	<%= render project.attachments %>
+    <% end %>
+<% end %>

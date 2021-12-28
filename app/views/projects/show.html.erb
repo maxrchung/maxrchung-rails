@@ -1,0 +1,15 @@
+<% @title = @project.title %>
+
+<h1><%= @project.title %></h1>
+<p class="timestamp">Last edited: <%= @project.updated_at.strftime("%-d %B %Y, %l:%M%p") %></p>
+<%= @project.content.html_safe %>
+
+<% if logged_in? %>
+    <%= button_to "Edit project", edit_project_path(:id => @project.id), :method => :get %>
+    <%= button_to "Delete project", project_path(:id => @project.id), :method => :delete, data: { confirm: 'Are you sure?' } %>
+    
+    <% if @project.attachments.length > 0 %>
+	Attachments<br>
+	<%= render @project.attachments %>
+    <% end %>
+<% end %>
