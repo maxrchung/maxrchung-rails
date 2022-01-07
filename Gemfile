@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 
 # https://stackoverflow.com/questions/19953653/how-to-set-up-postgres-database-for-local-rails-project
 gem 'pg'
