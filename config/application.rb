@@ -20,6 +20,9 @@ module Site
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Configure logger for STDOUT? https://guides.rubyonrails.org/debugging_rails_applications.html#what-is-the-logger-questionmark
+    config.logger = Logger.new(STDOUT)
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.time_zone = 'Pacific Time (US & Canada)'
     config.active_record.default_timezone = :local
